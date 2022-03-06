@@ -15,7 +15,9 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
+    db: sequelize,
+		checkExpirationInterval: 12 * 60 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
+    expiration: 4 * 60 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
   })
 };
 
