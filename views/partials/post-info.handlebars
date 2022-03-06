@@ -1,10 +1,12 @@
-<article class="post">
-  <div class="title">
-    <a href="{{post_text}}" target="_blank">{{title}}</a>
-    <span>({{post_text}})</span>
-  </div>
-  <div class="meta">
-    |
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
-</article>
+<a class="nav-link" href="/post/{{id}}">
+	<div class="col">
+		<div class="card">
+			<h3 class="card-header">{{title}}</h3>
+			<div class="card-body">
+				<p class="card-text">
+						<small class="text-muted">{{user.username}} on {{format_date created_at}}</small>
+				</p>
+			</div>
+		</div>
+	</div>		
+</a>
