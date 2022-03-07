@@ -1,30 +1,29 @@
 <section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-text">Link</label>
-      <input id="post-text" name="post-text" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+	<div class=" container d-flex justify-content-center">
+		<h3>Create New Post</h3>
+	</div>
+	<form class="new-post-form container col-lg-8 mt-5">
+		<div class="mb-3">
+			<label for="post-title" class="form-label">Title:</label>
+			<input type="text" class="form-control" name="post-title"/>
+		</div>
+		<div class="mb-3">
+			<label for="post-text" class="form-label">Content:</label>
+			<input type="text" class="form-control" name="post-text"/>
+		</div>		
+		<button type="submit" class="btn btn-primary me-2">Create</button>
+	</form>
 </section>
 
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
+  <h3 class="d-flex justify-content-center">Your Posts</h3>
+	{{#each posts as |post|}}
+		{{> post-content post}}
+	<div class="container d-flex justify-content-center mb-3">
+		<a class=" btn btn-primary col-lg-3" href="/dashboard/edit/{{post.id}}" role="button">Edit</a>
+	</div>
+	{{/each}}
 </section>
 {{/if}}
 

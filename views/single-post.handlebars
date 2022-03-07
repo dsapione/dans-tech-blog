@@ -1,13 +1,11 @@
-{{> post-info post}}
+{{> post-content post}}
 
 {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
+<form class="container comment-form d-flex justify-content-center">
+  <div class="col">
+		<label for="comment" class="form-label">Comment:</label>
+    <textarea name="comment-body" class="form-control mb-2" id="comment" rows="3"></textarea>
+    <button type="submit" class="btn btn-primary me-2">Add Comment</button>
   </div>
 </form>
 {{/if}}
